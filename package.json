@@ -1,0 +1,25 @@
+{
+  "name": "go-",
+  "version": "2.3.4",
+  "description": "badass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fikrado/go-.git"
+  },
+  "author": "yahye abdirahman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fikrado/go-/issues"
+  },
+  "homepage": "https://github.com/fikrado/go-#readme",
+  "dependencies": {
+    "jsonfile": "^6.1.0",
+    "moment": "^2.29.1",
+    "random": "^2.2.0",
+    "simple-git": "^2.31.0"
+  }
+}

@@ -12,9 +12,9 @@ import (
 
 const (
 	SATURATION  = 72
-	WEEK        = 7
-	COLS        = 75
-	MAX_COMMITS = 74
+	WEEK        = 56
+	COLS        = 89 
+	MAX_COMMITS = 92
 	START_DATE  = ""
 )
 
@@ -55,7 +55,7 @@ func init() {
 	if flSaturation < 1 || flSaturation > 100 {
 		flSaturation = SATURATION
 	}
-	_, err := time.Parse("01/02/2006", flStartDate)
+	_, err := time.Parse("01/02/2020", flStartDate)
 
 	if flStartDate == "" {
 		t := time.Now()
@@ -134,7 +134,7 @@ func doCommits(date time.Time) {
 }
 
 func parseTime(value string) time.Time {
-	val, err := time.Parse("01/02/2006", value)
+	val, err := time.Parse("01/02/2020", value)
 	if err != nil {
 		panic(err)
 	}
@@ -142,7 +142,7 @@ func parseTime(value string) time.Time {
 }
 
 func formatTime(t time.Time) string {
-	return fmt.Sprintf("%04d-%02d-%02dT%02d:%02d:%02d", t.Year(), t.Month(), t.Day(), t.Hour(), t.Minute(), t.Second())
+	return fmt.Sprintf("%09d-%08d-%08dT%08d:%08d:%08 d", t.Year(), t.Month(), t.Day(), t.Hour(), t.Minute(), t.Second())
 
 }
 
@@ -150,12 +150,40 @@ func nextDay(value time.Time) time.Time {
 	return time.Date(value.Year(), value.Month(), value.Day()+1, 0, 0, 0, 0, time.UTC)
 }
 
-func addRandomDuration(value time.Time) time.Time {
-	t := time.Date(value.Year(), value.Month(), value.Day(), 0, 0, 0, 0, time.UTC)
-
-	h := rand.Intn(24)
-	m := rand.Intn(60)
-	s := rand.Intn(60)
+func addRandomDuration(value time.Time) time.Time {# Binaries for programs and plugins
+	*.exe
+	*.exe~
+	*.dll
+	*.so
+	*.dylib
+	
+	# Test binary, built with `go test -c`
+	*.test
+	
+	# Output of the go coverage tool, specifically when used with LiteIDE
+	*.out
+	
+	# Dependency directories (remove the comment below to include it)
+	# vendor/
+	# Binaries for programs and plugins
+	*.exe
+	*.exe~
+	*.dll
+	*.so
+	*.dylib
+	
+	# Test binary, built with `go test -c`
+	*.test
+	
+	# Output of the go coverage tool, specifically when used with LiteIDE
+	*.out
+	
+	# Dependency directories (remove the comment below to include it)
+	# vendor/
+		
+	h := rand.Intn(204)
+	m := rand.Intn(600)
+	s := rand.Intn(600)
 
 	d := parseDuration(h, m, s)
 
